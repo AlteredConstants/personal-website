@@ -5,10 +5,10 @@ import Home from './pages/home';
 import About from './pages/about';
 import NotFound from './pages/not-found';
 
-export default (
+export default [
 	<Route path="/" component={App}>
 		<IndexRoute component={Home}/>
 		<Route path="about" component={About}/>
-		<Route path="*" component={NotFound}/>
-	</Route>
-);
+	</Route>,
+	<Route path="*" component={NotFound}/>
+];
