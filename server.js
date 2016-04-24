@@ -3,6 +3,7 @@ import express from 'express';
 import React from 'react';
 import {renderToString} from 'react-dom/server';
 import {match, RouterContext} from 'react-router';
+import Helmet from 'react-helmet';
 import routes from './routes';
 import renderIndex from './render-index';
 import NotFound from './pages/not-found';
@@ -21,15 +22,13 @@ server.get('*', (req, res) => {
 		} else if (redirectLocation) {
 			res.redirect(302, redirectLocation.pathname + redirectLocation.search);
 		} else if (routeExists(renderProps)) {
-			res.status(200).send(renderIndex({
-				title: 'Meow',
-				app: renderToString(<RouterContext {...renderProps}/>)
-			}));
+			let app = renderToString(<RouterContext {...renderProps}/>);
+			let head = Helmet.rewind();
+			res.status(200).send(renderIndex({head, app}));
 		} else {
-			res.status(404).send(renderIndex({
-				title: 'Not Found',
-				app: renderToString(<NotFound/>)
-			}))
+			let app = renderToString(<NotFound/>);
+			let head = Helmet.rewind();
+			res.status(404).send(renderIndex({head, app}));
 		}
 	})
 });

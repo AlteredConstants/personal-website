@@ -20,6 +20,7 @@ System.config({
     "express": "npm:express@4.13.4",
     "react": "npm:react@15.0.1",
     "react-dom": "npm:react-dom@15.0.1",
+    "react-helmet": "npm:react-helmet@3.0.2",
     "react-router": "npm:react-router@2.3.0",
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.3.0"
@@ -335,6 +336,14 @@ System.config({
       "utils-merge": "npm:utils-merge@1.0.0",
       "vary": "npm:vary@1.0.1"
     },
+    "npm:fbjs@0.1.0-alpha.10": {
+      "core-js": "npm:core-js@1.2.6",
+      "fs": "github:jspm/nodelibs-fs@0.1.2",
+      "path": "github:jspm/nodelibs-path@0.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.2",
+      "promise": "npm:promise@7.1.1",
+      "whatwg-fetch": "npm:whatwg-fetch@0.9.0"
+    },
     "npm:fbjs@0.8.1": {
       "babel-plugin-syntax-flow": "npm:babel-plugin-syntax-flow@6.5.0",
       "core-js": "npm:core-js@1.2.6",
@@ -387,6 +396,11 @@ System.config({
     "npm:isomorphic-fetch@2.2.1": {
       "node-fetch": "npm:node-fetch@1.5.1",
       "whatwg-fetch": "npm:whatwg-fetch@0.11.0"
+    },
+    "npm:lodash.keys@3.1.2": {
+      "lodash._getnative": "npm:lodash._getnative@3.9.1",
+      "lodash.isarguments": "npm:lodash.isarguments@3.0.8",
+      "lodash.isarray": "npm:lodash.isarray@3.0.4"
     },
     "npm:loose-envify@1.1.0": {
       "js-tokens": "npm:js-tokens@1.0.3",
@@ -492,11 +506,22 @@ System.config({
     "npm:react-dom@15.0.1": {
       "react": "npm:react@15.0.1"
     },
+    "npm:react-helmet@3.0.2": {
+      "deep-equal": "npm:deep-equal@1.0.1",
+      "object-assign": "npm:object-assign@4.0.1",
+      "process": "github:jspm/nodelibs-process@0.1.2",
+      "react-side-effect": "npm:react-side-effect@1.0.2",
+      "shallowequal": "npm:shallowequal@0.2.2",
+      "warning": "npm:warning@2.1.0"
+    },
     "npm:react-router@2.3.0": {
       "history": "npm:history@2.0.2",
       "invariant": "npm:invariant@2.2.1",
       "process": "github:jspm/nodelibs-process@0.1.2",
       "warning": "npm:warning@2.1.0"
+    },
+    "npm:react-side-effect@1.0.2": {
+      "fbjs": "npm:fbjs@0.1.0-alpha.10"
     },
     "npm:react@15.0.1": {
       "fbjs": "npm:fbjs@0.8.1",
@@ -561,6 +586,9 @@ System.config({
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "inherits": "npm:inherits@2.0.1",
       "process": "github:jspm/nodelibs-process@0.1.2"
+    },
+    "npm:shallowequal@0.2.2": {
+      "lodash.keys": "npm:lodash.keys@3.1.2"
     },
     "npm:statuses@1.2.1": {
       "systemjs-json": "github:systemjs/plugin-json@0.1.1"

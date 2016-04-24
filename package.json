@@ -15,6 +15,7 @@
       "express": "npm:express@^4.13.4",
       "react": "npm:react@^15.0.1",
       "react-dom": "npm:react-dom@^15.0.1",
+      "react-helmet": "npm:react-helmet@^3.0.2",
       "react-router": "npm:react-router@^2.3.0"
     },
     "devDependencies": {
