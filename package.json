@@ -7,12 +7,12 @@
   "private": true,
   "dependencies": {},
   "devDependencies": {
-    "express": "^4.13.4",
     "jspm": "^0.16.33"
   },
   "jspm": {
     "dependencies": {
       "express": "npm:express@^4.13.4",
+      "path": "github:jspm/nodelibs-path@^0.1.0",
       "react": "npm:react@^15.0.1",
       "react-dom": "npm:react-dom@^15.0.1",
       "react-helmet": "npm:react-helmet@^3.0.2",

@@ -1,19 +1,33 @@
 import express from 'express';
+import path from 'path';
 
 import React from 'react';
 import {renderToString} from 'react-dom/server';
 import {match, RouterContext} from 'react-router';
 import Helmet from 'react-helmet';
+
 import routes from './routes';
 import renderIndex from './render-index';
 import NotFound from './pages/not-found';
+
+function getProjectPath(filePath) {
+	let fileUrlRegExp = new RegExp('^file:\\' + path.sep);
+	let modulePath = path.normalize(path.dirname(__moduleName)).replace(fileUrlRegExp, '');
+	return path.join(modulePath, '..', filePath);
+}
+
+function sendStaticFile(req, res) {
+	res.sendFile(getProjectPath(req.url));
+}
 
 function routeExists(renderProps) {
 	return renderProps && !renderProps.components.some(component => component === NotFound);
 }
 
-var server = express();
-server.use(express.static('.'));
+let server = express();
+server.get('/config.js', sendStaticFile);
+server.use('/jspm_packages', express.static(getProjectPath('jspm_packages')));
+server.use('/', express.static(getProjectPath('src')));
 
 server.get('*', (req, res) => {
 	match({routes, location: req.url}, (error, redirectLocation, renderProps) => {
