@@ -6,9 +6,10 @@ return `<!doctype html>
 	<meta charset="utf-8">
 	${title}
 	<script src="jspm_packages/system.js"></script>
-	<script src="config.js"></script>
+	<script src="jspm.browser.js"></script>
+	<script src="jspm.config.js"></script>
 	<script>
-		System.import('main');
+		System.import('ac/main');
 	</script>
 </head>
 <body>

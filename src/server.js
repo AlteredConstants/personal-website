@@ -6,9 +6,9 @@ import {renderToString} from 'react-dom/server';
 import {match, RouterContext} from 'react-router';
 import Helmet from 'react-helmet';
 
-import routes from './routes';
-import renderIndex from './render-index';
-import NotFound from './pages/not-found';
+import routes from 'ac/routes';
+import renderIndex from 'ac/render-index';
+import NotFound from 'ac/pages/not-found';
 
 function getProjectPath(filePath) {
 	let fileUrlRegExp = new RegExp('^file:\\' + path.sep);
@@ -25,9 +25,9 @@ function routeExists(renderProps) {
 }
 
 let server = express();
-server.get('/config.js', sendStaticFile);
+server.get('/jspm.*.js', sendStaticFile);
 server.use('/jspm_packages', express.static(getProjectPath('jspm_packages')));
-server.use('/', express.static(getProjectPath('src')));
+server.use('/src', express.static(getProjectPath('src')));
 
 server.get('*', (req, res) => {
 	match({routes, location: req.url}, (error, redirectLocation, renderProps) => {
