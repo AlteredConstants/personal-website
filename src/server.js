@@ -26,7 +26,8 @@ function routeExists(renderProps) {
 
 let server = express();
 server.get('/jspm.*.js', sendStaticFile);
-server.use('/jspm_packages', express.static(getProjectPath('jspm_packages')));
+server.get('/jspm_packages/system.js', sendStaticFile);
+server.use('/jspm_packages', express.static(getProjectPath('jspm_packages'), {maxAge: '365d'}));
 server.use('/src', express.static(getProjectPath('src')));
 
 server.get('*', (req, res) => {
