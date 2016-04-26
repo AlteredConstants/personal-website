@@ -11,8 +11,8 @@ import renderIndex from 'ac/render-index';
 import NotFound from 'ac/pages/not-found';
 
 function getProjectPath(filePath) {
-	let fileUrlRegExp = new RegExp('^file:\\' + path.sep);
-	let modulePath = path.normalize(path.dirname(__moduleName)).replace(fileUrlRegExp, '');
+	let fileUrlRegExp = new RegExp('^file://');
+	let modulePath = path.normalize(path.dirname(__moduleName).replace(fileUrlRegExp, ''));
 	return path.join(modulePath, '..', filePath);
 }
 
