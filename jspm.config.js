@@ -52,7 +52,7 @@ SystemJS.config({
     "module": "github:jspm/nodelibs-module@0.2.0-alpha",
     "net": "github:jspm/nodelibs-net@0.2.0-alpha",
     "os": "github:jspm/nodelibs-os@0.2.0-alpha",
-    "path": "github:jspm/nodelibs-path@0.2.0-alpha",
+    "path": "github:jspm/nodelibs-path@0.1.0",
     "plugin-babel": "npm:systemjs-plugin-babel@0.0.9",
     "process": "github:jspm/nodelibs-process@0.2.0-alpha",
     "querystring": "github:jspm/nodelibs-querystring@0.2.0-alpha",
@@ -92,6 +92,11 @@ SystemJS.config({
     "github:jspm/nodelibs-os@0.2.0-alpha": {
       "map": {
         "os-browserify": "npm:os-browserify@0.2.1"
+      }
+    },
+    "github:jspm/nodelibs-path@0.1.0": {
+      "map": {
+        "path-browserify": "npm:path-browserify@0.0.0"
       }
     },
     "github:jspm/nodelibs-stream@0.2.0-alpha": {

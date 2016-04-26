@@ -5,5 +5,5 @@ import routes from 'ac/routes';
 
 render(
 	<Router history={browserHistory} routes={routes}/>,
-	document.getElementById('app')
+	document.getElementById('react-content')
 );

@@ -2,23 +2,63 @@ import React from 'react';
 import {Link} from 'react-router';
 import Helmet from 'react-helmet';
 
+const navLinks = [
+	{route: '/', text: 'Home'},
+	{route: '/about', text: 'About'},
+	{route: '/resume', text: 'Résumé'},
+	{route: '/contact', text: 'Contact'},
+	{route: '/blog', text: 'Blog'}
+];
+
 export default class App extends React.Component {
 	render() {
 		return (
-			<section>
+			<div id="app">
 				<Helmet
 					titleTemplate="%s Altered Constants"
 					defaultTitle="Altered Constants"
+					link={[
+						{
+							rel: 'stylesheet',
+							type: 'text/css',
+							href: '/src/screen.css'
+						},
+						{
+							rel: 'stylesheet',
+							type: 'text/css',
+							href: 'https://fonts.googleapis.com/css?family=Enriqueta:400,700|Source+Sans+Pro:400italic,700italic,400'
+						}
+					]}
 				/>
-				<h1>Altered Constants</h1>
+				<header>
+					<h1><Link to="/">Altered Constants</Link></h1>
+				</header>
 				<nav>
+					<header>
+						<h1>Site Navigation</h1>
+					</header>
 					<ul>
-						<li><Link to="/">Home</Link></li>
-						<li><Link to="/about">About</Link></li>
+						{
+							navLinks.map(({route, text}) => (
+								<li key={route}><Link to={route} activeClassName="current">{text}</Link></li>
+							))
+						}
 					</ul>
 				</nav>
-				{this.props.children}
-			</section>
+				<div id="content">
+					{this.props.children}
+				</div>
+				<hr/>
+				<Link to="/license" id="license-link">
+					<footer>
+						<section id="page-info">
+							<p id="copyright">All content <span id="copyleft-icon">&copy;</span> Zeff Svoboda unless otherwise noted.</p>
+							<p id="license-message">But it's dangerous to go alone! Take this.</p>
+							<img src="//www.alteredconstants.com/inc/img/sword.png" alt="Creative Commons Attribution-Sharealike Unported 3.0 License"/>
+						</section>
+					</footer>
+				</Link>
+			</div>
 		);
 	}
 };

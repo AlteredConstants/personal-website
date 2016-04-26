@@ -1,10 +1,10 @@
 export default function(props) {
-	let title = props.head ? props.head.title.toString() : '';
 return `<!doctype html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	${title}
+	${props.head.title}
+	${props.head.link}
 	<script src="jspm_packages/system.js"></script>
 	<script src="jspm.browser.js"></script>
 	<script src="jspm.config.js"></script>
@@ -13,7 +13,7 @@ return `<!doctype html>
 	</script>
 </head>
 <body>
-	<section id="app">${props.app}</section>
+	<div id="react-content">${props.app}</div>
 </body>
 </html>`;
 };
