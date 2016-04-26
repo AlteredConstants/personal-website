@@ -6,6 +6,7 @@
   "repository": "AlteredConstants/personal-website",
   "private": true,
   "scripts": {
+    "postinstall": "jspm install",
     "start": "jspm run src/server.js"
   },
   "dependencies": {},
