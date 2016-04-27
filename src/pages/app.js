@@ -10,6 +10,19 @@ const navLinks = [
 	{route: '/blog', text: 'Blog'}
 ];
 
+const isBrowser = new Function("try {return this===window;}catch(e){return false;}");
+
+function renderTimestamp() {
+	if (!isBrowser()) {
+		return new Date().toISOString();
+	}
+	let staticRenderTimestamp = new Date(document.getElementById('render-timestamp').innerHTML);
+	if (isNaN(staticRenderTimestamp)) {
+		return '';
+	}
+	return 'Fully loaded after ' + (new Date() - staticRenderTimestamp)/1000 + ' seconds.';
+}
+
 export default class App extends React.Component {
 	render() {
 		return (
@@ -58,6 +71,11 @@ export default class App extends React.Component {
 						</section>
 					</footer>
 				</Link>
+				<section id="render-timestamp" style={{marginTop: 10, opacity: isBrowser() ? 0.3 : 0, textAlign: 'center'}}>
+				{
+					renderTimestamp()
+				}
+				</section>
 			</div>
 		);
 	}
