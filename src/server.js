@@ -1,5 +1,6 @@
 import express from 'express';
 import path from 'path';
+import os from 'os';
 
 import React from 'react';
 import {renderToString} from 'react-dom/server';
@@ -10,9 +11,14 @@ import routes from 'ac/routes';
 import renderIndex from 'ac/render-index';
 import NotFound from 'ac/pages/not-found';
 
+function getFilePathFromUrl(fileUrl) {
+	let fileSchemaAndHostRegExp = (os.platform() === 'win32') ? '^file://[^/]*/' : '^file://[^/]*';
+	let filePath = fileUrl.replace(new RegExp(fileSchemaAndHostRegExp), '');
+	return path.normalize(filePath);
+}
+
 function getProjectPath(filePath) {
-	let fileUrlRegExp = new RegExp('^file://');
-	let modulePath = path.normalize(path.dirname(__moduleName).replace(fileUrlRegExp, ''));
+	let modulePath = path.dirname(getFilePathFromUrl(__moduleName));
 	return path.join(modulePath, '..', filePath);
 }
 
