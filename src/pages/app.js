@@ -12,18 +12,28 @@ const navLinks = [
 
 const isBrowser = new Function("try {return this===window;}catch(e){return false;}");
 
-function renderTimestamp() {
-	if (!isBrowser()) {
-		return new Date().toISOString();
-	}
-	let staticRenderTimestamp = new Date(document.getElementById('render-timestamp').innerHTML);
-	if (isNaN(staticRenderTimestamp)) {
-		return '';
-	}
-	return 'Fully loaded after ' + (new Date() - staticRenderTimestamp)/1000 + ' seconds.';
+function getServerRenderTimestamp() {
+	return isBrowser() ? document.getElementById('render-time-message').innerHTML : new Date().toISOString();
+}
+
+function getRenderTimeDifferenceMessage(serverRenderTimestamp) {
+		serverRenderTimestamp = new Date(serverRenderTimestamp);
+		if (isNaN(serverRenderTimestamp)) {
+			return '';
+		}
+		return 'Fully loaded after ' + (new Date() - serverRenderTimestamp)/1000 + ' seconds.';
 }
 
 export default class App extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {renderTimeMessage: getServerRenderTimestamp()};
+	}
+
+	componentDidMount() {
+		this.setState({renderTimeMessage: getRenderTimeDifferenceMessage(this.state.renderTimeMessage)});
+	}
+
 	render() {
 		return (
 			<div id="app">
@@ -71,9 +81,9 @@ export default class App extends React.Component {
 						</section>
 					</footer>
 				</Link>
-				<section id="render-timestamp" style={{marginTop: 10, opacity: isBrowser() ? 0.3 : 0, textAlign: 'center'}}>
+				<section id="render-time-message" style={{marginTop: 10, opacity: 0.3, textAlign: 'center'}}>
 				{
-					renderTimestamp()
+					this.state.renderTimeMessage
 				}
 				</section>
 			</div>
