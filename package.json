@@ -7,10 +7,12 @@
   "private": true,
   "scripts": {
     "postinstall": "jspm install",
-    "start": "jspm run src/server.js"
+    "start": "jspm run src/server.js",
+    "watch": "chokidar-socket-emitter"
   },
   "dependencies": {},
   "devDependencies": {
+    "chokidar-socket-emitter": "^0.5.1",
     "jspm": "^0.17.0-beta.13"
   },
   "jspm": {
@@ -29,7 +31,9 @@
       "react-helmet": "npm:react-helmet@^3.0.2",
       "react-router": "npm:react-router@^2.3.0"
     },
-    "devDependencies": {},
+    "devDependencies": {
+      "systemjs-hot-reloader": "github:capaj/systemjs-hot-reloader@^0.5.7"
+    },
     "peerDependencies": {
       "assert": "github:jspm/nodelibs-assert@^0.2.0-alpha",
       "buffer": "github:jspm/nodelibs-buffer@^0.2.0-alpha",

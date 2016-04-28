@@ -16,13 +16,13 @@ function routeExists(renderProps) {
 	return renderProps && !renderProps.components.some(component => component === NotFound);
 }
 
-let server = express();
-server.get('/jspm.*.js', sendStaticFile);
-server.get('/jspm_packages/system.js', sendStaticFile);
-server.use('/jspm_packages', express.static(getAbsoluteProjectPath('jspm_packages'), {maxAge: '365d'}));
-server.use('/src', express.static(getAbsoluteProjectPath('src')));
+const handler = express();
+handler.get('/jspm.*.js', sendStaticFile);
+handler.get('/jspm_packages/system.js', sendStaticFile);
+handler.use('/jspm_packages', express.static(getAbsoluteProjectPath('jspm_packages'), {maxAge: '365d'}));
+handler.use('/src', express.static(getAbsoluteProjectPath('src')));
 
-server.get('*', (req, res) => {
+handler.get('*', (req, res) => {
 	match({routes, location: req.url}, (error, redirectLocation, renderProps) => {
 		if (error) {
 			res.status(500).send(error.message);
@@ -36,4 +36,4 @@ server.get('*', (req, res) => {
 	})
 });
 
-server.listen(3000);
+handler.listen(3000);

@@ -15,9 +15,7 @@ return `<!doctype html>
 	<script src="jspm.config.js"></script>
 </head>
 <body>
-	<div id="react-content">
-		${app}
-	</div>
+	<div id="react-content">${app}</div>
 	<script>
 		System.import('ac/main');
 	</script>
