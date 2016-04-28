@@ -17,7 +17,7 @@ return `<!doctype html>
 <body>
 	<div id="react-content">${app}</div>
 	<script>
-		System.import('ac/main');
+		System.import('alteredconstants-personal-website');
 	</script>
 </body>
 </html>`;

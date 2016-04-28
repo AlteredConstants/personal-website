@@ -1,12 +1,12 @@
 import React from 'react';
 import {Route, IndexRoute} from 'react-router';
-import App from 'ac/pages/app';
-import Home from 'ac/pages/home';
-import About from 'ac/pages/about';
-import Resume from 'ac/pages/resume';
-import Contact from 'ac/pages/contact';
-import License from 'ac/pages/license';
-import NotFound from 'ac/pages/not-found';
+import App from 'pages/app';
+import Home from 'pages/home';
+import About from 'pages/about';
+import Resume from 'pages/resume';
+import Contact from 'pages/contact';
+import License from 'pages/license';
+import NotFound from 'pages/not-found';
 
 export default [
 	<Route path="/" component={App}>

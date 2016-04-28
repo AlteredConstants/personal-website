@@ -49,7 +49,7 @@ export default class App extends React.Component {
 						{
 							rel: 'stylesheet',
 							type: 'text/css',
-							href: '/src/screen.css'
+							href: '/screen.css'
 						},
 						{
 							rel: 'stylesheet',

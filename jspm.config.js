@@ -7,11 +7,14 @@ SystemJS.config({
     ]
   },
   map: {
-    "ac": "src"
+    "routes": "src/routes",
+    "pages": "src/pages",
+    "utils": "src/utils"
   },
   packages: {
-    "ac": {
+    "alteredconstants-personal-website": {
       "format": "esm",
+      "main": "main.js",
       "meta": {
         "*.js": {
           "babelOptions": {
