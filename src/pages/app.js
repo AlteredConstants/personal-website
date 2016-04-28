@@ -13,7 +13,7 @@ const navLinks = [
 const isBrowser = new Function("try {return this===window;}catch(e){return false;}");
 
 function getServerRenderTimestamp() {
-	return isBrowser() ? document.getElementById('render-time-message').innerHTML : new Date().toISOString();
+	return isBrowser() ? document.getElementById('render-time-message').textContent : new Date().toISOString();
 }
 
 function getRenderTimeDifferenceMessage(serverRenderTimestamp) {
