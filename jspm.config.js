@@ -21,6 +21,9 @@ SystemJS.config({
             "presets": [
               "babel-preset-react",
               "babel-preset-stage-2"
+            ],
+            "plugins": [
+              "babel-plugin-transform-class-properties"
             ]
           }
         }
@@ -36,6 +39,7 @@ SystemJS.config({
     "github:*/*.json"
   ],
   map: {
+    "babel-plugin-transform-class-properties": "npm:babel-plugin-transform-class-properties@6.6.0",
     "babel": "npm:babel-core@6.7.7",
     "assert": "github:jspm/nodelibs-assert@0.2.0-alpha",
     "babel-preset-react": "npm:babel-preset-react@6.5.0",
@@ -254,6 +258,11 @@ SystemJS.config({
         "babel-runtime": "npm:babel-runtime@5.8.38"
       }
     },
+    "npm:babel-plugin-syntax-class-properties@6.5.0": {
+      "map": {
+        "babel-runtime": "npm:babel-runtime@5.8.38"
+      }
+    },
     "npm:babel-plugin-syntax-exponentiation-operator@6.5.0": {
       "map": {
         "babel-runtime": "npm:babel-runtime@5.8.38"
@@ -283,6 +292,12 @@ SystemJS.config({
       "map": {
         "babel-helper-remap-async-to-generator": "npm:babel-helper-remap-async-to-generator@6.7.0",
         "babel-plugin-syntax-async-functions": "npm:babel-plugin-syntax-async-functions@6.5.0",
+        "babel-runtime": "npm:babel-runtime@5.8.38"
+      }
+    },
+    "npm:babel-plugin-transform-class-properties@6.6.0": {
+      "map": {
+        "babel-plugin-syntax-class-properties": "npm:babel-plugin-syntax-class-properties@6.5.0",
         "babel-runtime": "npm:babel-runtime@5.8.38"
       }
     },

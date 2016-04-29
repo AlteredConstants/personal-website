@@ -1,0 +1,4 @@
+{
+	// VSCode doesn't understand class properties yet, so rely on ESLint instead.
+	"javascript.validate.enable": false
+}

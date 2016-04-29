@@ -8,17 +8,26 @@
   "scripts": {
     "postinstall": "jspm install",
     "start": "jspm run src/server.js",
-    "watch": "chokidar-socket-emitter"
+    "watch": "chokidar-socket-emitter",
+    "lint": "eslint src"
   },
   "dependencies": {},
   "devDependencies": {
+    "babel-eslint": "^6.0.4",
     "chokidar-socket-emitter": "^0.5.1",
+    "eslint": "^2.8.0",
+    "eslint-config-airbnb": "^8.0.0",
+    "eslint-import-resolver-jspm": "^2.1.0",
+    "eslint-plugin-import": "^1.6.1",
+    "eslint-plugin-jsx-a11y": "^1.0.4",
+    "eslint-plugin-react": "^5.0.1",
     "jspm": "^0.17.0-beta.13"
   },
   "jspm": {
     "main": "main.js",
     "dependencies": {
       "babel": "npm:babel-core@^6.7.7",
+      "babel-plugin-transform-class-properties": "npm:babel-plugin-transform-class-properties@^6.6.0",
       "babel-preset-react": "npm:babel-preset-react@^6.5.0",
       "babel-preset-stage-2": "npm:babel-preset-stage-2@^6.5.0",
       "babel-runtime": "npm:babel-runtime@^5.8.24",
