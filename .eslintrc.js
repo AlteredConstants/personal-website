@@ -9,9 +9,6 @@ module.exports = {
     "__moduleName": true
   },
   "rules": {
-    "indent": ["error", "tab"],
-    "react/jsx-indent": ["error", "tab"],
-    "react/jsx-indent-props": ["error", "tab"],
     // Disabled until eslint-import-resolver-jspm is updated for jspm 0.17.
     // https://github.com/nfl/jspm-resolve/issues/8
     "import/no-unresolved": 0

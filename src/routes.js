@@ -9,12 +9,12 @@ import License from 'pages/license';
 import NotFound from 'pages/not-found';
 
 export default [
-	<Route path="/" component={App}>
-		<IndexRoute component={Home} />
-		<Route path="about" component={About} />
-		<Route path="resume" component={Resume} />
-		<Route path="contact" component={Contact} />
-		<Route path="license" component={License} />
-	</Route>,
-	<Route path="*" component={NotFound} />,
+  <Route path="/" component={App}>
+    <IndexRoute component={Home} />
+    <Route path="about" component={About} />
+    <Route path="resume" component={Resume} />
+    <Route path="contact" component={Contact} />
+    <Route path="license" component={License} />
+  </Route>,
+  <Route path="*" component={NotFound} />,
 ];
