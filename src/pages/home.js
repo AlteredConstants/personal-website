@@ -1,11 +1,13 @@
 import React from 'react';
+import applyStyles from 'react-css-modules';
+import styles from 'styles/section.css';
 
-export default function Home() {
+function Home() {
   return (
     <div>
       <section id="the-basics">
         <header>
-          <h1>The Basics</h1>
+          <h1 styleName="main-section">The Basics</h1>
         </header>
         <p>
           My name's Zeff Svoboda. I write in <a href="https://en.wikipedia.org/wiki/Computer_programming">formal languages</a>,
@@ -16,7 +18,7 @@ export default function Home() {
       </section>
       <section id="construction">
         <header>
-          <h1>Incomplete</h1>
+          <h1 styleName="main-section">Incomplete</h1>
         </header>
         <p>
           Like all the great websites at the turn of the century, this site is "under construction"
@@ -30,3 +32,5 @@ export default function Home() {
     </div>
   );
 }
+
+export default applyStyles(Home, styles);
