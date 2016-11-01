@@ -11,15 +11,10 @@ export default function (component) {
       <meta charset="utf-8">
       ${title}
       ${link}
-      <script src="jspm_packages/system.js"></script>
-      <script src="jspm.browser.js"></script>
-      <script src="jspm.config.js"></script>
     </head>
     <body>
       <div id="react-content">${app}</div>
-      <script>
-        System.import('alteredconstants-personal-website');
-      </script>
+      <script src="static/bundle.js"></script>
     </body>
     </html>
   `;

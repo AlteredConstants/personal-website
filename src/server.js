@@ -1,4 +1,5 @@
 import express from 'express';
+import path from 'path';
 
 import React from 'react';
 import { match, RouterContext } from 'react-router';
@@ -6,24 +7,13 @@ import { match, RouterContext } from 'react-router';
 import routes from 'routes';
 import renderIndex from 'utils/render-index';
 import NotFound from 'pages/not-found';
-import getAbsoluteProjectPath from 'utils/get-absolute-project-path';
-
-function sendStaticFile(req, res) {
-  res.sendFile(getAbsoluteProjectPath(req.url));
-}
 
 function routeExists(renderProps) {
   return renderProps && !renderProps.components.some(component => component === NotFound);
 }
 
 const handler = express();
-handler.get('/jspm.*.js', sendStaticFile);
-handler.get('/jspm_packages/system.js', sendStaticFile);
-handler.use(
-  '/jspm_packages',
-  express.static(getAbsoluteProjectPath('jspm_packages'),	{ maxAge: '365d' })
-);
-handler.use('/', express.static(getAbsoluteProjectPath('src')));
+handler.use('/static', express.static(path.join(__dirname, 'public')));
 
 handler.get('*', (req, res) => {
   match({ routes, location: req.url }, (error, redirectLocation, renderProps) => {
