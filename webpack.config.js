@@ -19,7 +19,7 @@ const baseConfig = {
       {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract(
-          'css?modules&localIdentName=[name]__[local]___[hash:base64:5]'
+          'css?modules&sourceMap&localIdentName=[name]__[local]___[hash:base64:5]'
         ),
         exclude: /node_modules/,
       },
