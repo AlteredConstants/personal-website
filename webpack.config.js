@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const nodeExternals = require('webpack-node-externals');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
@@ -32,6 +33,7 @@ module.exports = [
     },
     resolve: resolveConfig,
     module: moduleConfig,
+    devtool: 'sourcemap',
     plugins: [new ExtractTextPlugin('screen.css')],
   },
   {
@@ -49,6 +51,13 @@ module.exports = [
     externals: [nodeExternals()],
     resolve: resolveConfig,
     module: moduleConfig,
-    plugins: [new ExtractTextPlugin('screen.css')],
+    devtool: 'sourcemap',
+    plugins: [
+      new ExtractTextPlugin('screen.css'),
+      new webpack.BannerPlugin(
+        'require("source-map-support").install();',
+        { raw: true, entryOnly: false }
+      ),
+    ],
   },
 ];
