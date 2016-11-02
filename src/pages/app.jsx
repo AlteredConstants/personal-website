@@ -37,11 +37,11 @@ export default function App({ children }) {
           <h1>Site Navigation</h1>
         </header>
         <ul>
-        {
-          navLinks.map(({ route, text }) => (
-            <li key={route}><Link to={route} activeClassName="current">{text}</Link></li>
-          ))
-        }
+          {
+            navLinks.map(({ route, text }) => (
+              <li key={route}><Link to={route} activeClassName="current">{text}</Link></li>
+            ))
+          }
         </ul>
       </nav>
       <div id="content">{children}</div>

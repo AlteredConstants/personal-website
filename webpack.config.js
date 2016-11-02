@@ -12,7 +12,7 @@ const baseConfig = {
   },
   module: {
     preLoaders: [
-      { test: /\.js$/, loader: 'eslint-loader', exclude: /node_modules/ },
+      { test: /\.jsx?$/, loader: 'eslint', exclude: /node_modules/ },
     ],
     loaders: [
       { test: /\.jsx?$/, loader: 'babel', exclude: /node_modules/ },
@@ -36,6 +36,7 @@ module.exports = [
       filename: 'bundle.js',
     },
     plugins: [new ExtractTextPlugin('screen.css')],
+    eslint: { env: { browser: true } },
   }),
   merge(baseConfig, {
     name: 'server',

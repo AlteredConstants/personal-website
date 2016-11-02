@@ -30,7 +30,7 @@ export default function About() {
         </p>
         <p>
           Born and raised in the Twin Cities, Zeff earned his bachelor's degree in Computer
-          Engineering	with a minor in Linguistics from the University of Minnesota. He has spent the
+          Engineering with a minor in Linguistics from the University of Minnesota. He has spent the
           last decade honing his software development skills, starting from
           humble <abbr title="Hypertext Markup Language">HTML</abbr> websites full
           of <code>&lt;table&gt;</code>s and bad graphics through to complex, modular,
