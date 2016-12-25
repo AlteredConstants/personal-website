@@ -6,6 +6,14 @@ import Page from '../component/page';
 export default function License({ url }) {
   return (
     <Page title="License" pathname={url.pathname}>
+      <style jsx>{`
+        figure iframe {
+          width: 42vw;
+          height: 23.625vw;
+          max-width: 560px;
+          max-height: 315px;
+        }
+      `}</style>
       <section id="copyright-blurb">
         <header>
           <h1>Copyright</h1>

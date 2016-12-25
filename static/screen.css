@@ -34,7 +34,6 @@ body {
   background: linear-gradient(0deg, #E4E4D1, #DAD7C9 20em, #CFC9C1 60em) no-repeat fixed 0 0 #CFC9C1;
 }
 
-/* header.css/.content-header */
 h1, h2, h3, h4, h5, h6, #app > nav li {
   font-family: 'Source Sans Pro', Arial, sans-serif;
   font-style: italic;
@@ -124,7 +123,6 @@ h1, h2, h3, h4, h5, h6, #app > nav li {
   padding-bottom: 2.2em;
 }
 
-/* section.css/.main-section */
 #content header h1 {
   font-size: 1.2em;
   border-bottom: 2px solid #df9739;
