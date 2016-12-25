@@ -1,10 +1,10 @@
 import React from 'react';
-import Helmet from 'react-helmet';
+import { NextUrlType } from '../component/types';
+import Page from '../component/page';
 
-export default function About() {
+export default function About({ url }) {
   return (
-    <div>
-      <Helmet title="About" />
+    <Page title="About" pathname={url.pathname}>
       <section id="about-site">
         <header>
           <h1>About the Site</h1>
@@ -30,7 +30,7 @@ export default function About() {
         </p>
         <p>
           Born and raised in the Twin Cities, Zeff earned his bachelor's degree in Computer
-          Engineering	with a minor in Linguistics from the University of Minnesota. He has spent the
+          Engineering with a minor in Linguistics from the University of Minnesota. He has spent the
           last decade honing his software development skills, starting from
           humble <abbr title="Hypertext Markup Language">HTML</abbr> websites full
           of <code>&lt;table&gt;</code>s and bad graphics through to complex, modular,
@@ -70,6 +70,10 @@ export default function About() {
           </li>
         </ol>
       </section>
-    </div>
+    </Page>
   );
 }
+
+About.propTypes = {
+  url: NextUrlType,
+};

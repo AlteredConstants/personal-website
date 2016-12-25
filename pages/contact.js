@@ -1,10 +1,10 @@
 import React from 'react';
-import Helmet from 'react-helmet';
+import { NextUrlType } from '../component/types';
+import Page from '../component/page';
 
-export default function Contact() {
+export default function Contact({ url }) {
   return (
-    <div>
-      <Helmet title="Contact" />
+    <Page title="Contact" pathname={url.pathname}>
       <section id="the-basics">
         <header>
           <h1>Contact</h1>
@@ -26,6 +26,10 @@ export default function Contact() {
           <li><a href="http://vimeo.com/alteredconstants"><img src="//www.alteredconstants.com/inc/img/social-icons/vimeo.png" alt="Vimeo" title="Vimeo" /></a></li>
         </ul>
       </section>
-    </div>
+    </Page>
   );
 }
+
+Contact.propTypes = {
+  url: NextUrlType,
+};

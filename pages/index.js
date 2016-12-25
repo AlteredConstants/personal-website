@@ -1,13 +1,13 @@
 import React from 'react';
-import applyStyles from 'react-css-modules';
-import styles from 'styles/section.css';
+import { NextUrlType } from '../component/types';
+import Page from '../component/page';
 
-function Home() {
+export default function Index({ url }) {
   return (
-    <div>
+    <Page pathname={url.pathname}>
       <section id="the-basics">
         <header>
-          <h1 styleName="main-section">The Basics</h1>
+          <h1>The Basics</h1>
         </header>
         <p>
           My name's Zeff Svoboda. I write in <a href="https://en.wikipedia.org/wiki/Computer_programming">formal languages</a>,
@@ -18,7 +18,7 @@ function Home() {
       </section>
       <section id="construction">
         <header>
-          <h1 styleName="main-section">Incomplete</h1>
+          <h1>Incomplete</h1>
         </header>
         <p>
           Like all the great websites at the turn of the century, this site is "under construction"
@@ -29,8 +29,10 @@ function Home() {
           scrutiny. Let's see how the latter goes.
         </p>
       </section>
-    </div>
+    </Page>
   );
 }
 
-export default applyStyles(Home, styles);
+Index.propTypes = {
+  url: NextUrlType,
+};

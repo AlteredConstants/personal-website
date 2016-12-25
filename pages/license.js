@@ -1,11 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router';
-import Helmet from 'react-helmet';
+import Link from 'next/prefetch';
+import { NextUrlType } from '../component/types';
+import Page from '../component/page';
 
-export default function License() {
+export default function License({ url }) {
   return (
-    <div>
-      <Helmet title="License" />
+    <Page title="License" pathname={url.pathname}>
       <section id="copyright-blurb">
         <header>
           <h1>Copyright</h1>
@@ -61,7 +61,7 @@ export default function License() {
             main page would be appreciated.
           </li>
           <li>
-            <b>(Optional)</b> <Link to="/contact">Let me know</Link> what you're doing (or planning
+            <b>(Optional)</b> <Link href="/contact">Let me know</Link> what you're doing (or planning
             to do) with it—I'd love to hear about your project.
           </li>
         </ol>
@@ -86,6 +86,10 @@ export default function License() {
           </small>
         </p>
       </footer>
-    </div>
+    </Page>
   );
 }
+
+License.propTypes = {
+  url: NextUrlType,
+};

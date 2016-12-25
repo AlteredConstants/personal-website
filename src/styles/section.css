@@ -1,9 +1,0 @@
-@value primary from './values/colors.css';
-
-.main-section {
-  composes: content-header from './header.css';
-  font-size: 1.2em;
-  border-bottom: 2px solid primary;
-  color: primary;
-  padding-left: 1em;
-}

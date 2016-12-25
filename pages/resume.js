@@ -1,15 +1,15 @@
 import React from 'react';
-import Helmet from 'react-helmet';
+import { NextUrlType } from '../component/types';
+import Page from '../component/page';
 
 function yearsSince(year) {
   const years = new Date().getFullYear() - year;
   return (years === 1) ? '1 year' : `${years} years`;
 }
 
-export default function Resume() {
+export default function Resume({ url }) {
   return (
-    <div>
-      <Helmet title="Résumé of" />
+    <Page title="Résumé of" pathname={url.pathname}>
       <section id="objectives">
         <header>
           <h1>Objectives</h1>
@@ -274,6 +274,10 @@ export default function Resume() {
           </header>
         </section>
       </section>
-    </div>
+    </Page>
   );
 }
+
+Resume.propTypes = {
+  url: NextUrlType,
+};
