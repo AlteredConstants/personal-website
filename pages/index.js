@@ -1,25 +1,19 @@
 import React from 'react';
-import { NextUrlType } from '../component/types';
-import Page from '../component/page';
+import createPage from 'component/createPage';
+import MainSection from 'component/MainSection';
 
-export default function Index({ url }) {
+function Index() {
   return (
-    <Page pathname={url.pathname}>
-      <section id="the-basics">
-        <header>
-          <h1>The Basics</h1>
-        </header>
+    <article>
+      <MainSection title="The Basics">
         <p>
           My name's Zeff Svoboda. I write in <a href="https://en.wikipedia.org/wiki/Computer_programming">formal languages</a>,
           I study <a href="https://en.wikipedia.org/wiki/Linguistics">natural languages</a>, and
           sometimes I make <a href="http://vimeo.com/alteredconstants">a fool of myself</a>.
         </p>
         <p>I decided I needed another website all to myself. This is that website.</p>
-      </section>
-      <section id="construction">
-        <header>
-          <h1>Incomplete</h1>
-        </header>
+      </MainSection>
+      <MainSection title="Incomplete">
         <p>
           Like all the great websites at the turn of the century, this site is "under construction"
           and will likely be so indefinitely. I hope for it to be a repository for my various
@@ -28,11 +22,9 @@ export default function Index({ url }) {
           splash page until I've finished my masterpiece, or put something (anything) out there for
           scrutiny. Let's see how the latter goes.
         </p>
-      </section>
-    </Page>
+      </MainSection>
+    </article>
   );
 }
 
-Index.propTypes = {
-  url: NextUrlType,
-};
+export default createPage(Index);

@@ -1,19 +1,34 @@
 import React from 'react';
-import { NextUrlType } from '../component/types';
-import Page from '../component/page';
+import createPage from 'component/createPage';
+import MainSection from 'component/MainSection';
 
 function yearsSince(year) {
   const years = new Date().getFullYear() - year;
   return (years === 1) ? '1 year' : `${years} years`;
 }
 
-export default function Resume({ url }) {
+function Resume() {
   return (
-    <Page title="Résumé of" pathname={url.pathname}>
-      <section id="objectives">
-        <header>
-          <h1>Objectives</h1>
-        </header>
+    <article>
+      <style jsx>{`
+        h2 {
+          font-family: 'Source Sans Pro', Arial, sans-serif;
+          text-transform: uppercase;
+          font-size: 1em;
+          font-style: normal;
+          margin-bottom: 0;
+          letter-spacing: 0.15em;
+        }
+        h3 {
+          font-family: 'Source Sans Pro', Arial, sans-serif;
+          font-style: italic;
+          text-transform: uppercase;
+          font-size: 0.9em;
+          margin-top: 0;
+          letter-spacing: 0.15em;
+        }
+      `}</style>
+      <MainSection title="Objectives">
         <ul>
           <li>
             Continue to develop my love for the Web and software design through exciting projects
@@ -29,13 +44,10 @@ export default function Resume({ url }) {
             Work with an equally enthusiastic team to inspire and drive me toward all of the above.
           </li>
         </ul>
-      </section>
+      </MainSection>
 
       {/*
-      <section id="strengths">
-        <header>
-          <h1>Work Strengths</h1>
-        </header>
+      <MainSection title="Work Strengths">
         <ul>
           <li>Excellent logical problem solving skills.</li>
           <li>Step-by-step troubleshooting skills.</li>
@@ -46,13 +58,10 @@ export default function Resume({ url }) {
           <li>Strong teaching ability.</li>
           <li>Fast learner.</li>
         </ul>
-      </section>
+      </MainSection>
       */}
 
-      <section id="web">
-        <header>
-          <h1>Web</h1>
-        </header>
+      <MainSection title="Web">
         <p>
           {yearsSince(2001)} of experience with Web programming and design technologies and best
           practices.
@@ -72,12 +81,9 @@ export default function Resume({ url }) {
           </li>
           <li><p>Back-end programming and database design using PHP, MySQL, Node.js.</p></li>
         </ul>
-      </section>
+      </MainSection>
 
-      <section id="software">
-        <header>
-          <h1>Software</h1>
-        </header>
+      <MainSection title="Software">
         <p>
           {yearsSince(2001)} of experience with software design and development and
           {yearsSince(2008)} of experience in a software development work environment.
@@ -104,12 +110,9 @@ export default function Resume({ url }) {
           </li>
           <li><p>Software version control systems including Git, Mercurial, and Perforce.</p></li>
         </ul>
-      </section>
+      </MainSection>
 
-      <section id="sys-admin">
-        <header>
-          <h1>System Administration</h1>
-        </header>
+      <MainSection title="System Administration">
         <p>
           {yearsSince(2002)} years of experience with various operating systems and server and
           network technologies.
@@ -131,12 +134,9 @@ export default function Resume({ url }) {
             </p>
           </li>
         </ul>
-      </section>
+      </MainSection>
 
-      <section id="employment">
-        <header>
-          <h1>Employment History</h1>
-        </header>
+      <MainSection title="Employment History">
         <section id="emp-code42">
           <section>
             <header>
@@ -221,12 +221,9 @@ export default function Resume({ url }) {
           </header>
           <p>Volunteer technical support</p>
         </section>
-      </section>
+      </MainSection>
 
-      <section id="education">
-        <header>
-          <h1>Education</h1>
-        </header>
+      <MainSection title="Education">
         <section id="edu-umn">
           <header>
             <h2>Fall 2009 – Spring 2013</h2>
@@ -273,11 +270,9 @@ export default function Resume({ url }) {
             <h3>St. Paul Central High School, St. Paul, MN</h3>
           </header>
         </section>
-      </section>
-    </Page>
+      </MainSection>
+    </article>
   );
 }
 
-Resume.propTypes = {
-  url: NextUrlType,
-};
+export default createPage(Resume, { title: 'Résumé of' });

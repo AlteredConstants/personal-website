@@ -1,23 +1,27 @@
 import React from 'react';
 import Link from 'next/prefetch';
-import { NextUrlType } from '../component/types';
-import Page from '../component/page';
+import createPage from 'component/createPage';
+import MainSection from 'component/MainSection';
 
-export default function License({ url }) {
+function License() {
   return (
-    <Page title="License" pathname={url.pathname}>
+    <article>
       <style jsx>{`
         figure iframe {
+          display: block;
+          margin: auto;
           width: 42vw;
           height: 23.625vw;
           max-width: 560px;
           max-height: 315px;
         }
+
+        figcaption {
+          text-align: right;
+          font-size: 0.8em;
+        }
       `}</style>
-      <section id="copyright-blurb">
-        <header>
-          <h1>Copyright</h1>
-        </header>
+      <MainSection title="Copyright">
         <p>
           Copyright is a tricky subject. While I fully support the original purpose of copyright
           law—to incentivize authors and inventors to create more to share—I am disappointed in what
@@ -44,12 +48,9 @@ export default function License({ url }) {
           international copyright law. Counter-intuitive as it might seem, this is a requirement for
           "<a href="https://en.wikipedia.org/wiki/Copyleft">copyleft</a>" licensing.
         </p>
-      </section>
+      </MainSection>
 
-      <section id="licensing">
-        <header>
-          <h1>Licensing</h1>
-        </header>
+      <MainSection title="Licensing">
         <p>
           All content on this site (alteredconstants.com) is licensed under
           a <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons
@@ -73,7 +74,7 @@ export default function License({ url }) {
             to do) with it—I'd love to hear about your project.
           </li>
         </ol>
-      </section>
+      </MainSection>
 
       <footer>
         <p>
@@ -94,10 +95,8 @@ export default function License({ url }) {
           </small>
         </p>
       </footer>
-    </Page>
+    </article>
   );
 }
 
-License.propTypes = {
-  url: NextUrlType,
-};
+export default createPage(License, { title: 'License' });
