@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://www.alteredconstants.com/static/sitemap.xml
