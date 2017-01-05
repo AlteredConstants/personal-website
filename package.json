@@ -1,13 +1,15 @@
 {
-  "name": "alteredconstants-personal-website",
+  "name": "alteredconstants-website",
   "version": "1.0.0",
   "author": "Zeff Svoboda",
   "license": "ISC",
-  "repository": "AlteredConstants/personal-website",
+  "repository": "AlteredConstants/alteredconstants.com",
   "private": true,
   "scripts": {
     "dev": "next",
-    "lint": "eslint --ext js --ext jsx ."
+    "lint": "eslint .",
+    "build": "next build",
+    "start": "next start"
   },
   "babel": {
     "presets": [

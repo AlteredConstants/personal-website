@@ -41,7 +41,7 @@ export default function Footer() {
             </p>
             <p id="license-message">But it's dangerous to go alone! Take this.</p>
             <img
-              src="//www.alteredconstants.com/inc/img/sword.png"
+              src="/static/img/sword.png"
               alt="Creative Commons Attribution-Sharealike Unported 3.0 License"
             />
           </section>
