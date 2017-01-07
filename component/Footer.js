@@ -3,37 +3,38 @@ import Link from 'next/prefetch';
 
 export default function Footer() {
   return (
-    <Link href="/license">
-      <a>
-        <style jsx>{`
-          a, a:visited, a:hover {
-            text-decoration: none;
-            clear: both;
-            display: block;
-          }
+    <footer>
+      <style jsx>{`
+        footer {
+          font-size: 0.9rem;
+          text-align: center;
+          padding: 1em 0;
+          display: flex;
+          justify-content: center;
+        }
 
-          a footer {
-            padding: 1em 0;
-            color: #404040;
-            font-size: 0.9em;
-            text-align: center;
-            line-height: 0.5em;
-            width: 100%;
-            margin: 0;
-            opacity: 0.4;
-          }
+        p { margin: 0; }
+        img { margin-top: 0.7em; }
 
-          a:hover footer {
-            opacity: 1;
-          }
+        a {
+          color: #404040;
+        }
+        a:link, a:visited {
+          opacity: 0.4;
+        }
+        a:hover {
+          opacity: 1;
+          text-decoration: none;
+        }
 
-          #copyleft-icon {
-            transform: scaleX(-1);
-            display: inline-block;
-            font-family: arial;
-          }
-        `}</style>
-        <footer>
+        #copyleft-icon {
+          transform: scaleX(-1);
+          display: inline-block;
+          font-family: arial;
+        }
+      `}</style>
+      <Link href="/license">
+        <a>
           <section id="page-info">
             <p id="copyright">
               All content <span id="copyleft-icon">&copy;</span> Zeff Svoboda unless otherwise
@@ -45,8 +46,8 @@ export default function Footer() {
               alt="Creative Commons Attribution-Sharealike Unported 3.0 License"
             />
           </section>
-        </footer>
-      </a>
-    </Link>
+        </a>
+      </Link>
+    </footer>
   );
 }

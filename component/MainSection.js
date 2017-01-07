@@ -5,15 +5,14 @@ export default function MainSection({ title, children }) {
     <section>
       <style jsx>{`
         section {
-          padding: 0 1em;
+          padding: 0 1rem;
         }
         header h1 {
-          font-size: 1.2em;
+          font-size: 1.2rem;
           border-bottom: 2px solid #df9739;
           color: #df9739;
-          padding-left: 1em;
-          margin-left: -1em;
-          margin-right: -1em;
+          padding: 0 1rem;
+          margin: 1rem -1rem;
         }
       `}</style>
       <header>

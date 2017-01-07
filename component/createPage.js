@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import Link from 'next/prefetch';
+import NavLink from 'component/NavLink';
 import Footer from 'component/Footer';
 
 const navLinks = [
@@ -31,20 +31,17 @@ export default (Component, { title } = {}) => {
           * { box-sizing: border-box; }
           a img { border: 0; }
 
+          html { min-height: 100%; }
           body {
-            width: 80%;
-            min-width: 200px;
-            max-width: 1000px;
-            margin: auto;
+            min-height: 100%;
+            margin: 0;
+            padding: 2rem;
+            color: #000;
             font-family: 'Enriqueta', Arial, sans-serif;
             font-size: 11pt;
             line-height: 1.4em;
-          }
-
-          body {
-            color: #000;
-            background-color: #cfc9c1;
-            background: linear-gradient(0deg, #E4E4D1, #DAD7C9 20em, #CFC9C1 60em) no-repeat fixed 0 0 #CFC9C1;
+            background-color: #E4E4D1;
+            background-image: linear-gradient(to bottom, #CFC9C1, #DAD7C9 40em, #E4E4D1 120em);
           }
 
           a:link {
@@ -68,68 +65,19 @@ export default (Component, { title } = {}) => {
           }
         `}</style>
         <style jsx>{`
-          header h1 {
-            font-size: 1em;
+          #page {
+            min-height: 100%;
+            min-width: 200px;
+            max-width: 960px;
+            margin: auto;
+            display: flex;
+            flex-flow: row wrap;
           }
 
-          header h1 a, nav li a {
-            display: block;
-            box-sizing: content-box;
-
-            width: 9em;
-            height: 3.2em;
-            border-radius: 0 5em 0 0;
-            padding: 2em 0 0 1em;
-
-            font-size: 1.4em;
-            line-height: 1.2em;
-          }
-
-          header {
-            width: 30%;
-            float: right;
-            clear: right;
-          }
-
-          nav {
-            width: 30%;
-            float: right;
-            clear: right;
-          }
-
-          header h1 a:link, header h1 a:visited {
-            background-color: #df9739;
-            color: #dfd7b7;
-            font-weight: 700;
-            text-decoration: none;
-          }
-
-          nav li a:link, nav li a:visited {
-            margin: 0.5em 0;
-            border-bottom: 2px solid #fff;
-
-            background-color: transparent;
-            color: #fff;
-
-            text-decoration: none;
-          }
-
-          nav li a:link.current, nav li a:visited.current {
-            border: 2px solid #fff;
-            font-weight: bold;
-          }
-
-          header h1 a:hover {
-            color: #fff;
-          }
-
-          nav li a:hover {
-            background-color: #fff;
-            color: #548bd2;
-          }
-
-          nav header {
-            display: none;
+          header, nav {
+            flex: 1 100%;
+            display: flex;
+            justify-content: flex-end;
           }
 
           nav ul {
@@ -138,21 +86,48 @@ export default (Component, { title } = {}) => {
             padding: 0;
           }
 
-          nav ul li:first-child { display: none; }
+          nav li:first-child { display: none; }
 
-          nav + :global(*) {
-            width: 70%;
-            padding-right: 2em;
-            padding-top: 5.47em;
-            padding-bottom: 2.2em;
+          header h1, nav li {
+            margin: 0 0 0.2rem 0;
           }
 
-          nav + :global(*) + hr {
+          nav header {
             display: none;
+          }
+
+          /* Footer */
+          #page > :global(*):last-child {
+            flex: 1 100%;
+          }
+
+          @media (min-width: 768px) {
+            nav {
+              order: 3;
+              flex: 0;
+            }
+
+            /* Main Content */
+            #page > :global(*):nth-last-child(2) {
+              order: 2;
+              flex: 1 0%;
+              margin-top: calc(-2.7rem + -4px);
+              padding-right: 2em;
+              padding-bottom: 2.2em;
+            }
+
+            /* Footer */
+            #page > :global(*):last-child {
+              order: 4;
+            }
+
+            header h1, nav li {
+              margin: 0 0 0.5rem 0;
+            }
           }
         `}</style>
         <header>
-          <h1 className="header-font"><Link href="/"><a>Altered Constants</a></Link></h1>
+          <h1><NavLink href="/" isPrimary>Altered Constants</NavLink></h1>
         </header>
         <nav>
           <header>
@@ -161,10 +136,8 @@ export default (Component, { title } = {}) => {
           <ul>
             {
               navLinks.map(({ route, text }) => (
-                <li key={route} className="header-font">
-                  <Link href={route}>
-                    <a className={(pathname === route) ? 'current' : ''}>{text}</a>
-                  </Link>
+                <li key={route}>
+                  <NavLink href={route} isCurrent={pathname === route}>{text}</NavLink>
                 </li>
               ))
             }
@@ -172,7 +145,6 @@ export default (Component, { title } = {}) => {
           </ul>
         </nav>
         {child}
-        <hr />
         <Footer />
       </div>
     );
