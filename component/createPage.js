@@ -17,6 +17,8 @@ export default (Component, { title } = {}) => {
     return (
       <div id="page">
         <Head>
+          <meta charSet="utf-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
           <title>{`${(title ? `${title} ` : '')}Altered Constants`}</title>
           <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Enriqueta:400,700|Source+Sans+Pro:400italic,700italic,400" />
         </Head>
