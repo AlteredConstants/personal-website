@@ -1,13 +1,11 @@
 import React from 'react';
 import Link from 'next/prefetch';
+import classnames from 'classnames';
 
 export default function NavLink({ href, children, isPrimary, isCurrent }) {
-  const className = ['header-font'];
-  if (isPrimary) className.push('primary');
-  if (isCurrent) className.push('current');
   return (
     <Link href={href}>
-      <a className={className.join(' ')}>
+      <a className={classnames({ 'header-font': true, primary: isPrimary, current: isCurrent })}>
         <style jsx>{`
           a {
             box-sizing: content-box;
