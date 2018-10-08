@@ -7,16 +7,8 @@ function Index() {
     <article>
       <MainSection title="The Basics">
         <p>
-          My name's Zeff Svoboda. I write in{" "}
-          <a href="https://en.wikipedia.org/wiki/Computer_programming">
-            formal languages
-          </a>
-          , I study{" "}
-          <a href="https://en.wikipedia.org/wiki/Linguistics">
-            natural languages
-          </a>
-          , and sometimes I make{" "}
-          <a href="http://vimeo.com/alteredconstants">a fool of myself</a>.
+          My name's Zeff Svoboda.{" "}
+          <a href="https://github.com/AlteredConstants">I write code.</a>
         </p>
         <p>
           I decided I needed another website all to myself. This is that

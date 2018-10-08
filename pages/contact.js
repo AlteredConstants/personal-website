@@ -18,14 +18,10 @@ function Contact() {
       `}</style>
       <MainSection title="Contact">
         <p>
-          At the moment, the best place to contact me is probably Twitter{" "}
+          The best place to contact me is probably Twitter{" "}
           <a href="https://twitter.com/AltConsts">@AltConsts</a>.
         </p>
-        <p>
-          If you've got something private to say, I'll probably have a form for
-          sending emails at some point. Until then, you can try one of the
-          following:
-        </p>
+        <p>Other options include:</p>
         <ul>
           <li>
             <a href="https://twitter.com/AltConsts">

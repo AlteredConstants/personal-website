@@ -2,11 +2,6 @@ import React from "react";
 import createPage from "component/createPage";
 import MainSection from "component/MainSection";
 
-function yearsSince(year) {
-  const years = new Date().getFullYear() - year;
-  return years === 1 ? "1 year" : `${years} years`;
-}
-
 function Resume() {
   return (
     <article>
@@ -28,184 +23,74 @@ function Resume() {
           letter-spacing: 0.15em;
         }
       `}</style>
-      <MainSection title="Objectives">
-        <ul>
-          <li>
-            Continue to develop my love for the Web and software design through
-            exciting projects and new technologies.
-          </li>
-          <li>
-            Contribute to best-practice design for the healthy, sustainable
-            growth of the Web.
-          </li>
-          <li>
-            Further improve my software development and project management
-            skills.
-          </li>
-          <li>
-            Work with an equally enthusiastic team to inspire and drive me
-            toward all of the above.
-          </li>
-        </ul>
-      </MainSection>
-
-      {/*
-      <MainSection title="Work Strengths">
-        <ul>
-          <li>Excellent logical problem solving skills.</li>
-          <li>Step-by-step troubleshooting skills.</li>
-          <li>Friendly and helpful to customers and coworkers.</li>
-          <li>Very high dedication to quality of work.</li>
-          <li>Eager to expand knowledge and experience.</li>
-          <li>Works well both alone and in groups.</li>
-          <li>Strong teaching ability.</li>
-          <li>Fast learner.</li>
-        </ul>
-      </MainSection>
-      */}
-
-      <MainSection title="Web">
-        <p>
-          {yearsSince(2001)} of experience with Web programming and design
-          technologies and best practices.
-        </p>
-        <ul>
-          <li>
-            <p>
-              Front-end design using HTML5/XHTML, JavaScript, React.js,
-              CSS3/SCSS, and Photoshop/GIMP.
-            </p>
-          </li>
-          <li>
-            <p>
-              Build and dependency management using Grunt, NPM, and Webpack.
-            </p>
-          </li>
-          <li>
-            <p>
-              Semantic and structured information design using (X)HTML, XML,
-              XSD, XPath, and XSLT.
-            </p>
-          </li>
-          <li>
-            <p>
-              Back-end programming and database design using PHP, MySQL,
-              Node.js.
-            </p>
-          </li>
-        </ul>
-      </MainSection>
-
-      <MainSection title="Software">
-        <p>
-          {yearsSince(2001)} of experience with software design and development
-          and
-          {yearsSince(2008)} of experience in a software development work
-          environment.
-        </p>
-        <ul>
-          <li>
-            <p>
-              Procedural, object-oriented, functional, logic, and shell
-              programming languages including C#, C/C++, JavaScript, Ruby, PHP,
-              Python, Scheme/LISP, Haskell, SML, Prolog, BASH, GNU Make.
-            </p>
-          </li>
-          <li>
-            <p>
-              The Microsoft Visual Studio IDE including .NET framework 2/3/4,
-              Windows Forms, WPF, and Windows Phone development.
-            </p>
-          </li>
-          <li>
-            <p>
-              Design patterns and principles including Test-Driven Development,
-              Inversion of Control/Dependency Injection, Open/Closed Principle,
-              and Separation of Concerns.
-            </p>
-          </li>
-          <li>
-            <p>
-              Software version control systems including Git, Mercurial, and
-              Perforce.
-            </p>
-          </li>
-        </ul>
-      </MainSection>
-
-      <MainSection title="System Administration">
-        <p>
-          {yearsSince(2002)} years of experience with various operating systems
-          and server and network technologies.
-        </p>
-        <ul>
-          <li>
-            <p>
-              Linux Web server design using Apache, Nginx, PHP/MySQL services,
-              BIND, ISC DHCP.
-            </p>
-          </li>
-          <li>
-            <p>
-              Windows, Mac OS, Ubuntu, iOS, Android, Windows Phone, and Cygwin
-              environments.
-            </p>
-          </li>
-          <li>
-            <p>
-              Virtualization environments using VMware, Linux KVM, and HyperV.
-            </p>
-          </li>
-          <li>
-            <p>Network hardware and software on Cisco routers and switches.</p>
-          </li>
-          <li>
-            <p>
-              Routing protocols and other network standards and their
-              implementation in Cisco IOS and Linux including RIP, IGRP/EIGRP,
-              OSPF, STP, VTP, VLANs, NAT, DHCP, ACLs, link aggregation.
-            </p>
-          </li>
-        </ul>
-      </MainSection>
-
       <MainSection title="Employment History">
+        <section id="emp-miramar">
+          <header>
+            <h2>Miramar Technologies</h2>
+            <h3>2017 – Present</h3>
+          </header>
+          <p>Software Engineering Consultant</p>
+          <ul>
+            <li>
+              Developed full-stack employee management Web applications for a
+              client company using Angular 5, SCSS, RxJS, .NET Web API and SQL
+              Server.
+            </li>
+            <li>
+              Designed build, test, and release processes using Angular CLI,
+              Circle CI, and Node scripts, including detailed documentation for
+              hand-off to client’s engineering team.
+            </li>
+            <li>
+              Worked closely with Product, Design, and QA teams from various
+              companies to define requirements and iterate quickly on rapidly
+              evolving projects.
+            </li>
+            <li>
+              Led engineering projects and participated in technical
+              interviewing for both clients and the Miramar team.
+            </li>
+          </ul>
+        </section>
         <section id="emp-code42">
           <section>
             <header>
-              <h2>2015 – Present</h2>
-              <h3>Code42</h3>
+              <h2>Code42</h2>
+              <h3>2013 – 2016</h3>
             </header>
-            <p>Software engineer</p>
+            <p>Software Engineer</p>
             <ul>
               <li>
-                Developed desktop client user interfaces using Web technologies
-                such as Electron, JavaScript (ES6), React.js, SCSS, Grunt.
+                Developed new desktop client user interface for CrashPlan
+                application using Web technologies including Electron,
+                JavaScript (ES6/2015+), React.js, SCSS, Grunt, and Webpack.
+              </li>
+              <li>
+                Maintained unit and integration testing coverage using Jasmine,
+                Karma, and Mocha.
+              </li>
+              <li>
+                Developed automated tests using Selenium, Capybara, and
+                Cucumber/Spinach in a full-stack environment.
+              </li>
+              <li>
+                Worked in several different styles of agile development,
+                including scrum, and led feature teams.
               </li>
               <li>
                 Worked closely with Product, UX, and Design to clearly define
                 feature and project scope.
               </li>
               <li>
-                Responsible for tracking and ensuring completeness and
-                correctness of a major component of the application.
-              </li>
-              <li>
-                Developed automated tests using Selenium, Capybara, and Spinach
-                in a full-stack environment.
+                Developed and maintained build and test automation systems using
+                Ant, Node, Bash, and AWS EC2.
               </li>
             </ul>
-          </section>
-          <section>
-            <header>
-              <h2>2013 – 2015</h2>
-              <h3>Code42</h3>
-            </header>
-            <p>Junior Windows software developer</p>
+            <p>Junior Windows Software Developer</p>
             <ul>
               <li>
                 Developed desktop client user interfaces and the underlying
-                service to support them using the .NET Framework and WPF.
+                service to support them using the .NET Framework, C#, and WPF.
               </li>
               <li>
                 Redesigned and maintained build systems using Jenkins and
@@ -213,89 +98,47 @@ function Resume() {
               </li>
               <li>
                 Implemented and maintained branching strategies and dependency
-                management for the project repositories.
+                management for the project repositories using Git and NuGet.
               </li>
               <li>
                 Developed and coordinated cross-platform automated testing tools
-                for a full-stack environment.
+                for a full-stack environment using C#, Ruby, and Cucumber.
               </li>
             </ul>
           </section>
         </section>
         <section id="emp-3m">
           <header>
-            <h2>2008 – 2013</h2>
-            <h3>3M Company, Library Systems</h3>
+            <h2>3M Company, Library Systems</h2>
+            <h3>2008 – 2013</h3>
           </header>
-          <p>Software development technical aide</p>
-          <ul>
-            <li>Assisted developers with primary development projects.</li>
-            <li>Created testing and automation tools for developers.</li>
-          </ul>
-        </section>
-        <section id="emp-century">
-          <header>
-            <h2>2007 – 2008</h2>
-            <h3>Century Community and Technical College</h3>
-          </header>
-          <p>Fabrication Lab technical assistant</p>
+          <p>Software Development Technical Aide</p>
           <ul>
             <li>
-              Set up and maintained control computers for fabrication equipment.
+              Developed testing and automation tools using C#, SQL Server, Win
+              Forms, and WPF.
             </li>
           </ul>
-        </section>
-        <section id="emp-self-employed">
-          <header>
-            <h2>2003 – Present</h2>
-            <h3>Self-employed</h3>
-          </header>
-          <p>Technical support and Web development</p>
-        </section>
-        <section id="emp-central">
-          <header>
-            <h2>2002 – 2005</h2>
-            <h3>St. Paul Central High School</h3>
-          </header>
-          <p>Volunteer technical support</p>
         </section>
       </MainSection>
 
       <MainSection title="Education">
         <section id="edu-umn">
           <header>
-            <h2>Fall 2009 – Spring 2013</h2>
-            <h3>University of Minnesota, Minneapolis, MN</h3>
+            <h2>University of Minnesota, Minneapolis, MN</h2>
+            <h3>Fall 2009 – Spring 2013</h3>
           </header>
           <ul>
             <li>Bachelor of Computer Engineering</li>
             <li>Linguistics Minor</li>
-            <li>University Honors Program</li>
-          </ul>
-          <p>GPA: 3.544 (100 credits)</p>
-          <p>Extra-curricular:</p>
-          <ul>
-            <li>
-              Study Abroad
-              <ul>
-                <li>
-                  Japan (Summer 2010) – Intensive Japanese Language Program
-                </li>
-                <li>
-                  South Korea (Spring 2011) – CIEE South Korea Scholarship
-                  Recipient
-                </li>
-                <li>China (Summer 2011) – Digital Technology Seminar</li>
-              </ul>
-            </li>
-            <li>President of the Fencing Club (2012–2013)</li>
+            <li>CIEE South Korea Scholarship Recipient (2011)</li>
             <li>CSE International Ambassador (2010–2011)</li>
           </ul>
         </section>
         <section id="edu-century">
           <header>
-            <h2>Spring 2006 – Spring 2009</h2>
-            <h3>Century College, White Bear Lake, MN</h3>
+            <h2>Century College, White Bear Lake, MN</h2>
+            <h3>Spring 2006 – Spring 2009</h3>
           </header>
           <ul>
             <li>
@@ -304,18 +147,48 @@ function Resume() {
             </li>
             <li>Associate in Science – Engineering (Spring 2009)</li>
             <li>Associate in Science – Computer Science (Fall 2009)</li>
-            <li>Associate in Arts (Spring 2010)</li>
           </ul>
-          <p>
-            Overall GPA: 3.88 (152 credits), Technical GPA: 3.86, High
-            Distinction
-          </p>
         </section>
-        <section id="edu-central">
+      </MainSection>
+
+      <MainSection title="Volunteer">
+        <section id="vol-clojurebridge">
           <header>
-            <h2>Fall 2001 – Spring 2005</h2>
-            <h3>St. Paul Central High School, St. Paul, MN</h3>
+            <h2>ClojureBridge MN</h2>
+            <h3>2015 – 2016</h3>
           </header>
+          <p>Teaching Assistant</p>
+          <ul>
+            <li>
+              Taught core technology and software concepts to underrepresented
+              groups.
+            </li>
+            <li>
+              Helped create an inclusive, jargon-free space to improve the
+              accessibility of the tech industry.
+            </li>
+          </ul>
+        </section>
+        <section id="vol-umfc">
+          <header>
+            <h2>University of Minnesota Fencing Club</h2>
+            <h3>2012 – 2013</h3>
+          </header>
+          <p>President</p>
+          <ul>
+            <li>
+              Coordinated fundraising events, large local tournaments, and
+              interstate tournament travel.
+            </li>
+            <li>
+              Delegated duties to fellow officers, managed finances, and ran a
+              summer camp class.
+            </li>
+            <li>
+              Interfaced with coaches, the university, and the regional
+              collegiate conference.
+            </li>
+          </ul>
         </section>
       </MainSection>
     </article>
