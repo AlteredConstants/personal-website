@@ -3,11 +3,8 @@
     "browser": true
   },
   "parser": "babel-eslint",
-  "extends": "airbnb",
-  "plugins": [
-    "react",
-    "import"
-  ],
+  "extends": ["airbnb", "prettier"],
+  "plugins": ["react", "import"],
   "settings": {
     "import/resolver": "babel-module"
   },

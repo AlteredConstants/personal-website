@@ -1,17 +1,17 @@
-import React from 'react';
-import Head from 'next/head';
-import NavLink from 'component/NavLink';
-import Footer from 'component/Footer';
+import React from "react";
+import Head from "next/head";
+import NavLink from "component/NavLink";
+import Footer from "component/Footer";
 
 const navLinks = [
-  { route: '/', text: 'Home' },
-  { route: '/about', text: 'About' },
-  { route: '/resume', text: 'Résumé' },
-  { route: '/contact', text: 'Contact' },
+  { route: "/", text: "Home" },
+  { route: "/about", text: "About" },
+  { route: "/resume", text: "Résumé" },
+  { route: "/contact", text: "Contact" },
 ];
 
 export default (Component, { title } = {}) => {
-  const Page = (props) => {
+  const Page = props => {
     const child = <Component {...props} />;
     const pathname = props.url.pathname;
     return (
@@ -19,8 +19,12 @@ export default (Component, { title } = {}) => {
         <Head>
           <meta charSet="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <title>{`${(title ? `${title} ` : '')}Altered Constants`}</title>
-          <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Enriqueta:400,700|Source+Sans+Pro:400italic,700italic,400" />
+          <title>{`${title ? `${title} ` : ""}Altered Constants`}</title>
+          <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://fonts.googleapis.com/css?family=Enriqueta:400,700|Source+Sans+Pro:400italic,700italic,400"
+          />
         </Head>
         <style jsx global>{`
           /* Colors
@@ -30,20 +34,31 @@ export default (Component, { title } = {}) => {
           ** Dark Font: #dfd7b7
           */
 
-          * { box-sizing: border-box; }
-          a img { border: 0; }
+          * {
+            box-sizing: border-box;
+          }
+          a img {
+            border: 0;
+          }
 
-          html { min-height: 100%; }
+          html {
+            min-height: 100%;
+          }
           body {
             min-height: 100%;
             margin: 0;
             padding: 2rem;
             color: #000;
-            font-family: 'Enriqueta', Arial, sans-serif;
+            font-family: "Enriqueta", Arial, sans-serif;
             font-size: 11pt;
             line-height: 1.4em;
-            background-color: #E4E4D1;
-            background-image: linear-gradient(to bottom, #CFC9C1, #DAD7C9 40em, #E4E4D1 120em);
+            background-color: #e4e4d1;
+            background-image: linear-gradient(
+              to bottom,
+              #cfc9c1,
+              #dad7c9 40em,
+              #e4e4d1 120em
+            );
           }
 
           a:link {
@@ -60,7 +75,7 @@ export default (Component, { title } = {}) => {
           }
 
           .header-font {
-            font-family: 'Source Sans Pro', Arial, sans-serif;
+            font-family: "Source Sans Pro", Arial, sans-serif;
             font-style: italic;
             text-transform: uppercase;
             letter-spacing: 0.25em;
@@ -76,7 +91,8 @@ export default (Component, { title } = {}) => {
             flex-flow: row wrap;
           }
 
-          header, nav {
+          header,
+          nav {
             flex: 1 100%;
             display: flex;
             justify-content: flex-end;
@@ -88,9 +104,12 @@ export default (Component, { title } = {}) => {
             padding: 0;
           }
 
-          nav li:first-child { display: none; }
+          nav li:first-child {
+            display: none;
+          }
 
-          header h1, nav li {
+          header h1,
+          nav li {
             margin: 0 0 0.2rem 0;
           }
 
@@ -123,26 +142,31 @@ export default (Component, { title } = {}) => {
               order: 4;
             }
 
-            header h1, nav li {
+            header h1,
+            nav li {
               margin: 0 0 0.5rem 0;
             }
           }
         `}</style>
         <header>
-          <h1><NavLink href="/" isPrimary>Altered Constants</NavLink></h1>
+          <h1>
+            <NavLink href="/" isPrimary>
+              Altered Constants
+            </NavLink>
+          </h1>
         </header>
         <nav>
           <header>
             <h1>Site Navigation</h1>
           </header>
           <ul>
-            {
-              navLinks.map(({ route, text }) => (
-                <li key={route}>
-                  <NavLink href={route} isCurrent={pathname === route}>{text}</NavLink>
-                </li>
-              ))
-            }
+            {navLinks.map(({ route, text }) => (
+              <li key={route}>
+                <NavLink href={route} isCurrent={pathname === route}>
+                  {text}
+                </NavLink>
+              </li>
+            ))}
             {/* <li><a href="/blog">Blog</a></li> */}
           </ul>
         </nav>

@@ -1,11 +1,17 @@
-import React from 'react';
-import Link from 'next/prefetch';
-import classnames from 'classnames';
+import React from "react";
+import Link from "next/prefetch";
+import classnames from "classnames";
 
 export default function NavLink({ href, children, isPrimary, isCurrent }) {
   return (
     <Link href={href}>
-      <a className={classnames({ 'header-font': true, primary: isPrimary, current: isCurrent })}>
+      <a
+        className={classnames({
+          "header-font": true,
+          primary: isPrimary,
+          current: isCurrent,
+        })}
+      >
         <style jsx>{`
           a {
             box-sizing: content-box;
