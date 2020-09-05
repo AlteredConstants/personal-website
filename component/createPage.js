@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import NavLink from "component/NavLink";
 import Footer from "component/Footer";
 
@@ -10,10 +11,10 @@ const navLinks = [
   { route: "/contact", text: "Contact" },
 ];
 
-export default (Component, { title } = {}) => {
-  const Page = props => {
+export default function createPage(Component, { title } = {}) {
+  const Page = (props) => {
+    const { pathname } = useRouter();
     const child = <Component {...props} />;
-    const pathname = props.url.pathname;
     return (
       <div id="page">
         <Head>
@@ -175,11 +176,6 @@ export default (Component, { title } = {}) => {
       </div>
     );
   };
-  // Next.js props provided to its pages.
-  Page.propTypes = {
-    url: React.PropTypes.shape({
-      pathname: React.PropTypes.string.isRequired,
-    }),
-  };
+
   return Page;
-};
+}

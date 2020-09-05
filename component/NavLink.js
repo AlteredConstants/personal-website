@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "next/prefetch";
+import Link from "next/link";
 import classnames from "classnames";
 
 export default function NavLink({ href, children, isPrimary, isCurrent }) {
@@ -37,7 +37,7 @@ export default function NavLink({ href, children, isPrimary, isCurrent }) {
             color: #548bd2;
           }
 
-          a:not(.primary).current {
+          a.current {
             border: 2px solid #fff;
           }
 
@@ -69,9 +69,10 @@ export default function NavLink({ href, children, isPrimary, isCurrent }) {
   );
 }
 
-NavLink.propTypes = {
-  href: React.PropTypes.string.isRequired,
-  children: React.PropTypes.node.isRequired,
-  isPrimary: React.PropTypes.bool,
-  isCurrent: React.PropTypes.bool,
-};
+// Keep this around as documentation for some future TypeScript conversion.
+// NavLink.propTypes = {
+//   href: React.PropTypes.string.isRequired,
+//   children: React.PropTypes.node.isRequired,
+//   isPrimary: React.PropTypes.bool,
+//   isCurrent: React.PropTypes.bool,
+// };

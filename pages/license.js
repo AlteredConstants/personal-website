@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "next/prefetch";
+import Link from "next/link";
 import createPage from "component/createPage";
 import MainSection from "component/MainSection";
 

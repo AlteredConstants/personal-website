@@ -23,7 +23,8 @@ export default function MainSection({ title, children }) {
   );
 }
 
-MainSection.propTypes = {
-  title: React.PropTypes.string.isRequired,
-  children: React.PropTypes.node.isRequired,
-};
+// Keep this around as documentation for some future TypeScript conversion.
+// MainSection.propTypes = {
+//   title: React.PropTypes.string.isRequired,
+//   children: React.PropTypes.node.isRequired,
+// };
